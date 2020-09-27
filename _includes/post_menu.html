@@ -1,0 +1,63 @@
+{% assign app_name = site.data[page.language].texts | where:"name","hero_app_name" %}
+<nav class="navbar navbar-expand-md navbar-dark navbar-custom fixed-top">
+    <!-- Text Logo - Use this if you don't have a graphic logo -->
+    <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Leno</a> -->
+
+    <!-- Image Logo -->
+    <a class="navbar-brand logo-image" href="index.html"><img src="../assets/images/logo.svg" alt="alternative"></a> 
+    
+    <!-- Mobile Menu Toggle Button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-awesome fas fa-bars"></span>
+        <span class="navbar-toggler-awesome fas fa-times"></span>
+    </button>
+    <!-- end of mobile menu toggle button -->
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav ml-auto">
+         {%for nav_menu in site.data[page.language].nav_menu%}
+            {%if nav_menu.submenu == nil%}
+             <li class="nav-item">
+             {%if forloop.index == 1 %}
+                <a class="nav-link page-scroll" href="./">{{nav_menu.text}} <span class="sr-only">(current)</span></a>
+            {%endif%}
+             {%if forloop.index > 1 %}
+                <a class="nav-link page-scroll" href="./{{nav_menu.href}}">{{nav_menu.text}} <span class="sr-only">(current)</span></a>
+                {%endif%}
+            </li>
+            </li>
+            {%endif%}
+           
+             {%if nav_menu.submenu != nil%}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle page-scroll" href="{{nav_menu.href}}" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">{{nav_menu.text}}</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    {%for sub_menu in nav_menu.submenu%}
+                        <a class="dropdown-item" href="./{{sub_menu.href}}"><span class="item-text">{{sub_menu.text}}</span></a>
+                        {%if forloop.last ==false%}
+                        <div class="dropdown-items-divide-hr"></div>
+                        {%endif%}
+                    {%endfor%}
+                       
+                    </div>
+                </li>
+             {%endif%}
+         {%endfor%}
+
+        </ul>
+        <span class="nav-item social-icons">
+            <span class="fa-stack">
+                <a href="#your-link">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-facebook-f fa-stack-1x"></i>
+                </a>
+            </span>
+            <span class="fa-stack">
+                <a href="#your-link">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-twitter fa-stack-1x"></i>
+                </a>
+            </span>
+        </span>
+    </div>
+</nav> 

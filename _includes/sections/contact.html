@@ -1,13 +1,18 @@
+ {% assign contact_title = site.data[page.language].contact | where:"name","contact_title" %}
+ {% assign contact_description = site.data[page.language].contact | where:"name","contact_description" %}
+ {% assign contact_address = site.data[page.language].contact | where:"name","contact_address" %}
+ {% assign contact_phone_number = site.data[page.language].contact | where:"name","contact_phone_number" %}
+ {% assign contact_email = site.data[page.language].contact | where:"name","contact_email" %}
  <div id="contact" class="form">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h2>CONTACT</h2>
+                    <h2>{{contact_title.first.value}}</h2>
                     <ul class="list-unstyled li-space-lg">
-                        <li class="address">Don't hesitate to give us a call or just use the contact form below</li>
-                        <li><i class="fas fa-map-marker-alt"></i>22 Innovative, San Francisco, CA 94043, US</li>
-                        <li><i class="fas fa-phone"></i><a class="blue" href="tel:003024630820">+81 720 2212</a></li>
-                        <li><i class="fas fa-envelope"></i><a class="blue" href="mailto:office@leno.com">office@leno.com</a></li>
+                        <li class="address">{{contact_description.first.value}}</li>
+                        <li><i class="fas fa-map-marker-alt"></i>{{contact_address.first.value}}</li>
+                        <li><i class="fas fa-phone"></i><a class="blue" href="tel:{{contact_phone_number.first.value}}">{{contact_phone_number.first.value}}</a></li>
+                        <li><i class="fas fa-envelope"></i><a class="blue" href="mailto:{{contact_email.first.value}}">{{{{contact_email.first.value}}</a></li>
                     </ul>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->

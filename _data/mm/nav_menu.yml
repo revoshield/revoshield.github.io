@@ -8,10 +8,10 @@
   text: Feature
   submenu: 
 
-- href: "#preview"
-  data_ga: navigation | EzySign | home
-  text: Preview
-  submenu: 
+# - href: "#preview"
+#   data_ga: navigation | EzySign | home
+#   text: Preview
+#   submenu: 
 
 - href: "#details"
   data_ga: navigation | EzySign | home
@@ -29,4 +29,16 @@
   data_ga: navigation | EzySign | home
   text: Contact
   submenu: 
-   
+  
+- href: "#language"
+  data_ga: navigation | EzySign | home
+  text: Language
+  submenu:  
+    - href: "../en"
+      data_ga: navigation | EzySign | home
+      text: EN
+      submenu: 
+    - href: "../mm"
+      data_ga: navigation | EzySign | home
+      text: မြန်မာ
+      submenu: 

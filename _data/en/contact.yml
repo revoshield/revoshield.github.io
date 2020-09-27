@@ -1,0 +1,17 @@
+
+- name: contact_title
+  value: Contact
+
+- name: contact_description
+  value: Don't hesitate to give us a call or just use the contact form below.
+
+
+- name: contact_address
+  value: 
+
+- name: contact_email
+  value: hello@revoshield.cc
+
+
+- name: contact_phone_number
+  value: "+959443102852"
