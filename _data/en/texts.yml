@@ -1,0 +1,15 @@
+- name: title_text
+  value: "RevoShield | Facial Biometrics & Document ID Verification SaaS"
+
+- name: hero_app_name
+  value: "RevoShield"
+
+
+- name: description
+  value: RevoShield is building the new identity standard for the internet. We let your users verify their identity anywhere, anytime.
+
+- name: hero_app_use_cases
+  value: eKYC , Customer acquisition, User experience, Digitization .
+
+- name: hero_description
+  value: How do you verify real people in the digital world? RevoShield helps companies discover real identity - the people behind the scenes - with the help of leading AI and identity experts. Your customers can prove their identity anywhere with just a badge and their face. So you have everything you need to grow your business safely.

@@ -1,0 +1,13 @@
+url: http://revoshield.cc
+
+languages: ["en", "mm"]
+exclude_from_localizations: ["assets", "CNAME"]
+defaultLang: en
+languageNames: 
+  - name: "Myanmar"
+    root_url: "/mm"
+    icon: "🇲🇲"
+  - name: "English"
+    root_url: "/en"
+    icon: "🇬🇧"
+  
