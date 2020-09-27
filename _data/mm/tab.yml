@@ -1,0 +1,17 @@
+- href: home
+  data_ga: navigation | EzySign | home
+  icon: fa-cog 
+  title: eKYC
+  text: eKYC
+
+- href: benefits
+  data_ga: navigation | EzySign | service
+  icon: fa-cog 
+  title: Digitization
+  text: Digitization
+
+- href: features
+  data_ga: navigation | EzySign | service
+  icon: fa-cog 
+  title: Automation
+  text: Automation
