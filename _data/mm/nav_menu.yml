@@ -1,0 +1,32 @@
+- href: "#header"
+  data_ga: navigation | EzySign | home
+  text: Home
+  
+
+- href: "#features"
+  data_ga: navigation | EzySign | home
+  text: Feature
+  submenu: 
+
+- href: "#preview"
+  data_ga: navigation | EzySign | home
+  text: Preview
+  submenu: 
+
+- href: "#details"
+  data_ga: navigation | EzySign | home
+  text: Details
+  submenu: 
+    - href: terms-conditions.html
+      data_ga: navigation | EzySign | home
+      text: Terms and Conditions
+      submenu: 
+    - href: privacy-policy.html
+      data_ga: navigation | EzySign | home
+      text: Privacy Policy
+      submenu: 
+- href: "#contact"
+  data_ga: navigation | EzySign | home
+  text: Contact
+  submenu: 
+   

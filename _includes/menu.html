@@ -15,30 +15,35 @@
 
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a class="nav-link page-scroll" href="#header">HOME <span class="sr-only">(current)</span></a>
+         {%for nav_menu in site.data[page.language].nav_menu%}
+            {%if nav_menu.submenu == nil%}
+             <li class="nav-item">
+             {%if forloop.index == 1 %}
+                <a class="nav-link page-scroll" href="{{nav_menu.href}}">{{nav_menu.text}} <span class="sr-only">(current)</span></a>
+            {%endif%}
+             {%if forloop.index > 1 %}
+                <a class="nav-link page-scroll" href="{{nav_menu.href}}">{{nav_menu.text}} <span class="sr-only">(current)</span></a>
+                {%endif%}
             </li>
-            <li class="nav-item">
-                <a class="nav-link page-scroll" href="#features">FEATURES</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link page-scroll" href="#preview">PREVIEW</a>
-            </li>
+            {%endif%}
+           
+             {%if nav_menu.submenu != nil%}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle page-scroll" href="{{nav_menu.href}}" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">{{nav_menu.text}}</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    {%for sub_menu in nav_menu.submenu%}
+                        <a class="dropdown-item" href="{{sub_menu.href}}"><span class="item-text">{{sub_menu.text}}</span></a>
+                        {%if forloop.last ==false%}
+                        <div class="dropdown-items-divide-hr"></div>
+                        {%endif%}
+                    {%endfor%}
+                       
+                    </div>
+                </li>
+             {%endif%}
+         {%endfor%}
 
-            <!-- Dropdown Menu -->          
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle page-scroll" href="#details" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">DETAILS</a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="terms-conditions.html"><span class="item-text">TERMS CONDITIONS</span></a>
-                    <div class="dropdown-items-divide-hr"></div>
-                    <a class="dropdown-item" href="privacy-policy.html"><span class="item-text">PRIVACY POLICY</span></a>
-                </div>
-            </li>
-            <!-- end of dropdown menu -->
-
-            <li class="nav-item">
-                <a class="nav-link page-scroll" href="#contact">CONTACT</a>
-            </li>
         </ul>
         <span class="nav-item social-icons">
             <span class="fa-stack">
