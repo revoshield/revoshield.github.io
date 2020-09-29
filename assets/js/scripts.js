@@ -1,5 +1,5 @@
 /* Template: Leno - Mobile App HTML Landing Page Template
-   Author: Inovatik
+   Author: RevoShield
    Created: Mar 2019
    Description: Custom JS file
 */
