@@ -1,242 +1,317 @@
-{% assign feature_title = site.data[page.language].feature_texts | where:"name","feature_title" %}
-{% assign feature_description = site.data[page.language].feature_texts | where:"name","feature_description" %}
+{% assign feature_title = site.data[page.language].feature_texts |
+where:"name","feature_title" %} {% assign feature_description =
+site.data[page.language].feature_texts | where:"name","feature_description" %}
 <div id="features" class="tabs">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h2>{{feature_title.first.value}}</h2>
-                    <div class="p-heading p-large">{{feature_description.first.value}}</div>
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-            <div class="row">
-
-                <!-- Tabs Links -->
-                <ul class="nav nav-tabs" id="lenoTabs" role="tablist">
-                {%for menu in site.data[page.language].tab%}
-                    {% if forloop.index == 1%}
-                    <li class="nav-item">
-                        <a class="nav-link active" id="nav-tab-{{forloop.index}}" data-toggle="tab" href="#tab-{{forloop.index}}" role="tab" aria-controls="tab-{{forloop.index}}" aria-selected="false"><i class="fas {{menu.icon}}"></i>{{menu.title}}</a>
-                    </li>
-                    {%endif%}
-                     {% if forloop.index > 1%}
-                    <li class="nav-item">
-                        <a class="nav-link" id="nav-tab-{{forloop.index}}" data-toggle="tab" href="#tab-{{forloop.index}}" role="tab" aria-controls="tab-{{forloop.index}}" aria-selected="false"><i class="fas {{menu.icon}}"></i>{{menu.title}}</a>
-                    </li>
-                    {%endif%}
-                    
-                    {%endfor%}
-                   
-                </ul>
-                <!-- end of tabs links -->
-
-
-                <!-- Tabs Content-->
-                <div class="tab-content" id="lenoTabsContent">
-                    
-                    <!-- Tab -->
-                    <div class="tab-pane fade show active" id="tab-1" role="tabpanel" aria-labelledby="tab-1">
-                        <div class="container">
-                            <div class="row">
-                                
-                                <!-- Icon Cards Pane -->
-                                <div class="col-lg-4">
-                                    <div class="card left-pane first">
-                                        <div class="card-body">
-                                            <div class="text-wrapper">
-                                                <h4 class="card-title">Biometric Verification</h4>
-                                                <p>Balance usability and security with low-friction mobile identity solutions.</p>
-                                            </div>
-                                            <div class="card-icon">
-                                                <i class="far fa-compass"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="card left-pane">
-                                        <div class="card-body">
-                                            <div class="text-wrapper">
-                                                <h4 class="card-title">Fraud Prevention </h4>
-                                                <p>Hybrid approach of fraud prevention by validating documents and biometric data.</p>
-                                            </div>
-                                            <div class="card-icon">
-                                                <i class="far fa-file-code"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                </div>
-                                <!-- end of icon cards pane -->
-
-                                <!-- Image Pane -->
-                                <div class="col-lg-4">
-                                    <img class="img-fluid" src="../assets/images/features-2.png" alt="alternative">
-                                </div>
-                                <!-- end of image pane -->
-                                
-                                <!-- Icon Cards Pane -->
-                                <div class="col-lg-4">
-                                    <div class="card right-pane first">
-                                        <div class="card-body">
-                                            <div class="card-icon">
-                                                <i class="far fa-calendar-check"></i>
-                                            </div>
-                                            <div class="text-wrapper">
-                                                <h4 class="card-title">Document Verification</h4>
-                                                <p>ID documents validated with trusted sources</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="card right-pane">
-                                        <div class="card-body">
-                                            <div class="card-icon">
-                                                <i class="far fa-bookmark"></i>
-                                            </div>
-                                            <div class="text-wrapper">
-                                                <h4 class="card-title">User Experience</h4>
-                                                <p>Seamless onboarding experience boost up the application process. </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                   
-                                </div>
-                                <!-- end of icon cards pane -->
-
-                            </div> <!-- end of row -->
-                        </div> <!-- end of container -->
-                    </div> <!-- end of tab-pane -->
-                    <!-- end of tab -->
-
-                    <!-- Tab -->
-                    <div class="tab-pane fade" id="tab-2" role="tabpanel" aria-labelledby="tab-2">
-                        <div class="container">
-                            <div class="row">
-
-                                <!-- Image Pane -->
-                                <div class="col-md-4">
-                                    <img class="img-fluid" src="../assets/images/feature-1.png" alt="alternative">
-                                </div>
-                                <!-- end of image pane -->
-                                
-                                <!-- Text And Icon Cards Area -->
-                                <div class="col-md-8">
-                                    <div class="text-area">
-                                        <h3>Digitize your world securely</h3>
-                                        <p>Make the fear of identity fraud a thing of the past. Know with biometric certainty who your customers are. Know it’s really your customers when they transact.</p>
-                                    </div> <!-- end of text-area -->
-                                    
-                                    <div class="icon-cards-area">
-                                            <div class="card">
-                                                <div class="card-icon">
-                                                    <i class="fas fa-cube"></i>
-                                                </div>
-                                                <div class="card-body">
-                                                    <h4 class="card-title">Efficiency</h4>
-                                                    <p>High-speed biometric matching; automated document verification.</p>
-                                                </div>
-                                            </div>
-                                            <div class="card">
-                                                <div class="card-icon">
-                                                    <i class="far fa-bookmark"></i>
-                                                </div>
-                                                <div class="card-body">
-                                                    <h4 class="card-title">Secure Digitization</h4>
-                                                    <p>Safely store your details, securely prove who you are.</p>
-                                                </div>
-                                            </div>
-                                            <div class="card">
-                                                <div class="card-icon">
-                                                    <i class="far fa-calendar-check"></i>
-                                                </div>
-                                                <div class="card-body">
-                                                    <h4 class="card-title">Biometric Verification</h4>
-                                                    <p>The more you know your customers, the better will be your service.</p>
-                                                </div>
-                                            </div>
-                                            <div class="card">
-                                                <div class="card-icon">
-                                                    <i class="far fa-file-code"></i>
-                                                </div>
-                                                <div class="card-body">
-                                                    <h4 class="card-title">Visual Editor</h4>
-                                                    <p>Leno provides a well designed and ergonomic visual editor for you to edit your notes and input data</p>
-                                                </div>
-                                            </div>
-                                    </div> <!-- end of icon cards area -->
-                                </div> <!-- end of col-md-8 -->
-                                <!-- end of text and icon cards area -->
-
-                            </div> <!-- end of row -->
-                        </div> <!-- end of container -->
-                    </div> <!-- end of tab-pane -->
-                    <!-- end of tab -->
-
-                    <!-- Tab -->
-                    <div class="tab-pane fade" id="tab-3" role="tabpanel" aria-labelledby="tab-3">
-                        <div class="container">
-                            <div class="row">
- 
-                                <!-- Text And Icon Cards Area -->
-                                <div class="col-md-8">
-                                <div class="text-area">
-                                        <h3>Goodbye yor paper registeration forms</h3>
-                                        <p>Boost your people performance in the things that matters. We will take care of your day to day operation process.</p>
-                                    </div> <!-- end of text-area -->
-                                    <div class="icon-cards-area">
-                                        <div class="card">
-                                            <div class="card-icon">
-                                                <i class="far fa-calendar-check"></i>
-                                            </div>
-                                            <div class="card-body">
-                                                <h4 class="card-title">Calendar Input</h4>
-                                                <p>Schedule your appointments, meetings and periodical evaluations using the provided in-app calendar option</p>
-                                            </div>
-                                        </div>
-                                        <div class="card">
-                                            <div class="card-icon">
-                                                <i class="far fa-file-code"></i>
-                                            </div>
-                                            <div class="card-body">
-                                                <h4 class="card-title">Visual Editor</h4>
-                                                <p>Leno provides a well designed and ergonomic visual editor for you to edit your notes and input data</p>
-                                            </div>
-                                        </div>
-                                        <div class="card">
-                                            <div class="card-icon">
-                                                <i class="fas fa-cube"></i>
-                                            </div>
-                                            <div class="card-body">
-                                                <h4 class="card-title">Good Foundation</h4>
-                                                <p>Get a solid foundation for your self development efforts. Try Leno mobile app for any mobile platform</p>
-                                            </div>
-                                        </div>
-                                        <div class="card">
-                                            <div class="card-icon">
-                                                <i class="far fa-bookmark"></i>
-                                            </div>
-                                            <div class="card-body">
-                                                <h4 class="card-title">Easy Reading</h4>
-                                                <p>Reading focus mode for long form articles, ebooks and other materials which involve large text areas</p>
-                                            </div>
-                                        </div>
-                                    </div> <!-- end of icon cards area -->
-                                    
-                                   
-                                </div> <!-- end of col-md-8 -->
-                                <!-- end of text and icon cards area -->
-
-                                <!-- Image Pane -->
-                                <div class="col-md-4">
-                                    <img class="img-fluid" src="../assets/images/features-iphone-3.png" alt="alternative">
-                                </div>
-                                <!-- end of image pane -->
-                                    
-                            </div> <!-- end of row -->
-                        </div> <!-- end of container -->
-                    </div><!-- end of tab-pane -->
-                    <!-- end of tab -->
-
-                </div> <!-- end of tab-content -->
-                <!-- end of tabs content -->
-
-            </div> <!-- end of row --> 
-        </div> <!-- end of container --> 
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <h2>{{feature_title.first.value}}</h2>
+        <div class="p-heading p-large">{{feature_description.first.value}}</div>
+      </div>
+      <!-- end of col -->
     </div>
+    <!-- end of row -->
+    <div class="row">
+      <!-- Tabs Links -->
+      <ul class="nav nav-tabs" id="lenoTabs" role="tablist">
+        {%for menu in site.data[page.language].tab%} {% if forloop.index == 1%}
+        <li class="nav-item">
+          <a
+            class="nav-link active"
+            id="nav-tab-{{forloop.index}}"
+            data-toggle="tab"
+            href="#tab-{{forloop.index}}"
+            role="tab"
+            aria-controls="tab-{{forloop.index}}"
+            aria-selected="false"
+            ><i class="fas {{menu.icon}}"></i>{{menu.title}}</a
+          >
+        </li>
+        {%endif%} {% if forloop.index > 1%}
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            id="nav-tab-{{forloop.index}}"
+            data-toggle="tab"
+            href="#tab-{{forloop.index}}"
+            role="tab"
+            aria-controls="tab-{{forloop.index}}"
+            aria-selected="false"
+            ><i class="fas {{menu.icon}}"></i>{{menu.title}}</a
+          >
+        </li>
+        {%endif%} {%endfor%}
+      </ul>
+      <!-- end of tabs links -->
+
+      <!-- Tabs Content-->
+      <div class="tab-content" id="lenoTabsContent">
+        <!-- Tab -->
+        <div
+          class="tab-pane fade show active"
+          id="tab-1"
+          role="tabpanel"
+          aria-labelledby="tab-1"
+        >
+          <div class="container">
+            <div class="row">
+              <!-- Icon Cards Pane -->
+              <div class="col-lg-4">
+                <div class="card left-pane first">
+                  <div class="card-body">
+                    <div class="text-wrapper">
+                      <h4 class="card-title">Biometric Verification</h4>
+                      <p>
+                        Balance usability and security with low-friction mobile
+                        identity solutions.
+                      </p>
+                    </div>
+                    <div class="card-icon">
+                      <i class="fas fa-fingerprint"></i>
+                    </div>
+                  </div>
+                </div>
+                <div class="card left-pane">
+                  <div class="card-body">
+                    <div class="text-wrapper">
+                      <h4 class="card-title">Fraud Prevention</h4>
+                      <p>
+                        Hybrid approach of fraud prevention by validating
+                        documents and biometric data.
+                      </p>
+                    </div>
+                    <div class="card-icon">
+                      <i class="fas fa-user-shield"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- end of icon cards pane -->
+
+              <!-- Image Pane -->
+              <div class="col-lg-4">
+                <img
+                  class="img-fluid"
+                  src="../assets/images/features-2.png"
+                  alt="alternative"
+                />
+              </div>
+              <!-- end of image pane -->
+
+              <!-- Icon Cards Pane -->
+              <div class="col-lg-4">
+                <div class="card right-pane first">
+                  <div class="card-body">
+                    <div class="card-icon">
+                      <i class="fas fa-user-check"></i>
+                    </div>
+                    <div class="text-wrapper">
+                      <h4 class="card-title">Document Verification</h4>
+                      <p>ID documents validated with trusted sources</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="card right-pane">
+                  <div class="card-body">
+                    <div class="card-icon">
+                      <i class="far fa-smile-beam"></i>
+                    </div>
+                    <div class="text-wrapper">
+                      <h4 class="card-title">User Experience</h4>
+                      <p>
+                        Seamless onboarding experience boost up the application
+                        process.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- end of icon cards pane -->
+            </div>
+            <!-- end of row -->
+          </div>
+          <!-- end of container -->
+        </div>
+        <!-- end of tab-pane -->
+        <!-- end of tab -->
+
+        <!-- Tab -->
+        <div
+          class="tab-pane fade"
+          id="tab-2"
+          role="tabpanel"
+          aria-labelledby="tab-2"
+        >
+          <div class="container">
+            <div class="row">
+              <!-- Image Pane -->
+              <div class="col-md-4">
+                <img
+                  class="img-fluid"
+                  src="../assets/images/feature-1.png"
+                  alt="alternative"
+                />
+              </div>
+              <!-- end of image pane -->
+
+              <!-- Text And Icon Cards Area -->
+              <div class="col-md-8">
+                <div class="text-area">
+                  <h3>Digitize your world securely</h3>
+                  <p>
+                    Make the fear of identity fraud a thing of the past. Know
+                    with biometric certainty who your customers are. Know it’s
+                    really your customers when they transact.
+                  </p>
+                </div>
+                <!-- end of text-area -->
+
+                <div class="icon-cards-area">
+                  <div class="card">
+                    <div class="card-icon">
+                      <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <div class="card-body">
+                      <h4 class="card-title">Efficiency</h4>
+                      <p>
+                        High-speed biometric matching; automated document
+                        verification.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-icon">
+                      <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <div class="card-body">
+                      <h4 class="card-title">Secure Digitization</h4>
+                      <p>
+                        Safely store your details, securely prove who you are.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-icon">
+                      <i class="fas fa-fingerprint"></i>
+                    </div>
+                    <div class="card-body">
+                      <h4 class="card-title">Biometric Verification</h4>
+                      <p>
+                        The more you know your customers, the better will be
+                        your service.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <!-- end of icon cards area -->
+              </div>
+              <!-- end of col-md-8 -->
+              <!-- end of text and icon cards area -->
+            </div>
+            <!-- end of row -->
+          </div>
+          <!-- end of container -->
+        </div>
+        <!-- end of tab-pane -->
+        <!-- end of tab -->
+
+        <!-- Tab -->
+        {%- comment -%}
+        <div
+          class="tab-pane fade"
+          id="tab-3"
+          role="tabpanel"
+          aria-labelledby="tab-3"
+        >
+          <div class="container">
+            <div class="row">
+              <!-- Text And Icon Cards Area -->
+              <div class="col-md-8">
+                <div class="text-area">
+                  <h3>Goodbye yor paper registeration forms</h3>
+                  <p>
+                    Boost your people performance in the things that matters. We
+                    will take care of your day to day operation process.
+                  </p>
+                </div>
+                <!-- end of text-area -->
+                <div class="icon-cards-area">
+                  <div class="card">
+                    <div class="card-icon">
+                      <i class="far fa-calendar-check"></i>
+                    </div>
+                    <div class="card-body">
+                      <h4 class="card-title">Calendar Input</h4>
+                      <p>
+                        Schedule your appointments, meetings and periodical
+                        evaluations using the provided in-app calendar option
+                      </p>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-icon">
+                      <i class="far fa-file-code"></i>
+                    </div>
+                    <div class="card-body">
+                      <h4 class="card-title">Visual Editor</h4>
+                      <p>
+                        Leno provides a well designed and ergonomic visual
+                        editor for you to edit your notes and input data
+                      </p>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-icon">
+                      <i class="fas fa-cube"></i>
+                    </div>
+                    <div class="card-body">
+                      <h4 class="card-title">Good Foundation</h4>
+                      <p>
+                        Get a solid foundation for your self development
+                        efforts. Try Leno mobile app for any mobile platform
+                      </p>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-icon">
+                      <i class="far fa-bookmark"></i>
+                    </div>
+                    <div class="card-body">
+                      <h4 class="card-title">Easy Reading</h4>
+                      <p>
+                        Reading focus mode for long form articles, ebooks and
+                        other materials which involve large text areas
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <!-- end of icon cards area -->
+              </div>
+              <!-- end of col-md-8 -->
+              <!-- end of text and icon cards area -->
+
+              <!-- Image Pane -->
+              <div class="col-md-4">
+                <img
+                  class="img-fluid"
+                  src="../assets/images/features-iphone-3.png"
+                  alt="alternative"
+                />
+              </div>
+              <!-- end of image pane -->
+            </div>
+            <!-- end of row -->
+          </div>
+          <!-- end of container -->
+        </div>
+        <!-- end of tab-pane -->
+        {%- endcomment -%}
+        <!-- end of tab -->
+      </div>
+      <!-- end of tab-content -->
+      <!-- end of tabs content -->
+    </div>
+    <!-- end of row -->
+  </div>
+  <!-- end of container -->
+</div>
