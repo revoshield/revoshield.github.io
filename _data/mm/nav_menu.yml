@@ -1,44 +1,43 @@
 - href: "#header"
   data_ga: navigation | EzySign | home
   text: Home
-  
 
 - href: "#features"
   data_ga: navigation | EzySign | home
   text: Feature
-  submenu: 
+  submenu:
 
 # - href: "#preview"
 #   data_ga: navigation | EzySign | home
 #   text: Preview
-#   submenu: 
+#   submenu:
 
 - href: "#details"
   data_ga: navigation | EzySign | home
   text: Details
-  submenu: 
-    - href: terms-conditions.html
+  submenu:
+    - href: mm/terms-conditions.html
       data_ga: navigation | EzySign | home
       text: Terms and Conditions
-      submenu: 
-    - href: privacy-policy.html
+      submenu:
+    - href: mm/privacy-policy.html
       data_ga: navigation | EzySign | home
       text: Privacy Policy
-      submenu: 
+      submenu:
 - href: "#contact"
   data_ga: navigation | EzySign | home
   text: Contact
-  submenu: 
-  
+  submenu:
+
 - href: "#language"
   data_ga: navigation | EzySign | home
   text: Language
-  submenu:  
+  submenu:
     - href: "../en"
       data_ga: navigation | EzySign | home
       text: EN
-      submenu: 
+      submenu:
     - href: "../mm"
       data_ga: navigation | EzySign | home
       text: မြန်မာ
-      submenu: 
+      submenu:

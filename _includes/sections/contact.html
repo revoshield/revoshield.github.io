@@ -1,55 +1,137 @@
- {% assign contact_title = site.data[page.language].contact | where:"name","contact_title" %}
- {% assign contact_description = site.data[page.language].contact | where:"name","contact_description" %}
- {% assign contact_address = site.data[page.language].contact | where:"name","contact_address" %}
- {% assign contact_phone_number = site.data[page.language].contact | where:"name","contact_phone_number" %}
- {% assign contact_email = site.data[page.language].contact | where:"name","contact_email" %}
- <div id="contact" class="form">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h2>{{contact_title.first.value}}</h2>
-                    <ul class="list-unstyled li-space-lg">
-                        <li class="address">{{contact_description.first.value}}</li>
-                        <li><i class="fas fa-map-marker-alt"></i>{{contact_address.first.value}}</li>
-                        <li><i class="fas fa-phone"></i><a class="blue" href="tel:{{contact_phone_number.first.value}}">{{contact_phone_number.first.value}}</a></li>
-                        <li><i class="fas fa-envelope"></i><a class="blue" href="mailto:{{contact_email.first.value}}">{{{{contact_email.first.value}}</a></li>
-                    </ul>
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-            <div class="row">
-                <div class="col-lg-6 offset-lg-3">
-                    
-                    <!-- Contact Form -->
-                    <form id="contactForm" data-toggle="validator" data-focus="false">
-                        <div class="form-group">
-                            <input type="text" class="form-control-input" id="cname" required>
-                            <label class="label-control" for="cname">Name</label>
-                            <div class="help-block with-errors"></div>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" class="form-control-input" id="cemail" required>
-                            <label class="label-control" for="cemail">Email</label>
-                            <div class="help-block with-errors"></div>
-                        </div>
-                        <div class="form-group">
-                            <textarea class="form-control-textarea" id="cmessage" required></textarea>
-                            <label class="label-control" for="cmessage">Your message</label>
-                            <div class="help-block with-errors"></div>
-                        </div>
-                        <div class="form-group checkbox">
-                            <input type="checkbox" id="cterms" value="Agreed-to-Terms" required>I have read and agree to RevoShield's stated conditions in <a href="{{page.language}}/privacy-policy.html">Privacy Policy</a> and <a href="{{page.language}}/terms-conditions.html">Terms Conditions</a> 
-                            <div class="help-block with-errors"></div>
-                        </div>
-                        <div class="form-group">
-                            <button type="submit" class="form-control-submit-button">SUBMIT MESSAGE</button>
-                        </div>
-                        <div class="form-message">
-                            <div id="cmsgSubmit" class="h3 text-center hidden"></div>
-                        </div>
-                    </form>
-                    <!-- end of contact form -->
-
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-        </div> <!-- end of container -->
+{% assign contact_title = site.data[page.language].contact |
+where:"name","contact_title" %} {% assign contact_description =
+site.data[page.language].contact | where:"name","contact_description" %} {%
+assign contact_address = site.data[page.language].contact |
+where:"name","contact_address" %} {% assign contact_phone_number =
+site.data[page.language].contact | where:"name","contact_phone_number" %} {%
+assign contact_email = site.data[page.language].contact |
+where:"name","contact_email" %} {% assign industry_menu =
+site.data[page.language].industry_menu %}
+<div id="contact" class="form">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <h2>{{contact_title.first.value}}</h2>
+        <ul class="list-unstyled li-space-lg">
+          <li class="address">{{contact_description.first.value}}</li>
+          <li>
+            <i class="fas fa-map-marker-alt"></i>{{contact_address.first.value}}
+          </li>
+          <li>
+            <i class="fas fa-phone"></i
+            ><a class="blue" href="tel:{{contact_phone_number.first.value}}"
+              >{{contact_phone_number.first.value}}</a
+            >
+          </li>
+          <li>
+            <i class="fas fa-envelope"></i
+            ><a class="blue" href="mailto:{{contact_email.first.value}}"
+              >{{{{contact_email.first.value}}</a
+            >
+          </li>
+        </ul>
+      </div>
+      <!-- end of col -->
     </div>
+    <!-- end of row -->
+    <div class="row">
+      <div class="col-lg-6 offset-lg-3">
+        <!-- Contact Form -->
+        <form
+          id="contactForm"
+          action="https://getform.io/f/08e19f9a-dba9-457e-bc44-844dafb0b15e"
+          data-toggle="validator"
+          data-focus="false"
+        >
+          <div class="form-group">
+            <input
+              name="name"
+              type="text"
+              class="form-control-input"
+              id="cname"
+              required
+            />
+            <label class="label-control" for="cname">Name</label>
+            <div class="help-block with-errors"></div>
+          </div>
+          <div class="form-group">
+            <input
+              name="email"
+              type="email"
+              class="form-control-input"
+              id="cemail"
+              required
+            />
+            <label class="label-control" for="cemail">Email</label>
+            <div class="help-block with-errors"></div>
+          </div>
+          <div class="form-group">
+            <input
+              name="company_name"
+              type="text"
+              class="form-control-input"
+              id="ccompanyname"
+              required
+            />
+            <label class="label-control" for="cemail">Company Name</label>
+            <div class="help-block with-errors"></div>
+          </div>
+          <div class="form-group">
+            <select
+              aria-label="Industry"
+              data-ds="1"
+              data-domplace="1"
+              class="form-control-select"
+              name="industury"
+              defaultValue=""
+              required
+              aria-required="true"
+              data-extended-regex="/[^]*/gi"
+              data-regex-execute-on="live"
+              aria-invalid="true"
+            >
+              {% for option in industry_menu %}
+              <option value="{{option.value}}">{{option.text}}</option>
+              {%endfor%}
+            </select>
+          </div>
+          <div class="form-group">
+            <textarea
+              class="form-control-textarea"
+              id="cmessage"
+              required
+            ></textarea>
+            <label class="label-control" for="cmessage">Your message</label>
+            <div class="help-block with-errors"></div>
+          </div>
+          <div class="form-group checkbox">
+            <input
+              type="checkbox"
+              id="cterms"
+              value="Agreed-to-Terms"
+              required
+            />I have read and agree to RevoShield's stated conditions in
+            <a href="{{page.language}}/privacy-policy.html">Privacy Policy</a>
+            and
+            <a href="{{page.language}}/terms-conditions.html"
+              >Terms Conditions</a
+            >
+            <div class="help-block with-errors"></div>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="form-control-submit-button">
+              SUBMIT MESSAGE
+            </button>
+          </div>
+          <div class="form-message">
+            <div id="cmsgSubmit" class="h3 text-center hidden"></div>
+          </div>
+        </form>
+        <!-- end of contact form -->
+      </div>
+      <!-- end of col -->
+    </div>
+    <!-- end of row -->
+  </div>
+  <!-- end of container -->
+</div>

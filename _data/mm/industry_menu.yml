@@ -1,0 +1,42 @@
+- text: Please select
+  value: ""
+- text: "Accounting & Tax"
+  value: Accounting
+- text: Business Services / Consulting
+  value: Business Services
+- text: Construction
+  value: Construction
+- text: Education
+  value: Education
+- text: Financial Services
+  value: Financial Services
+- text: Government
+  value: Government
+- text: Healthcare - Health Plans & Payers
+  value: Insurance - Health
+- text: Healthcare - Providers
+  value: Healthcare - Providers
+- text: Insurance
+  value: Insurance
+- text: Legal
+  value: Legal
+- text: Life Sciences
+  value: Healthcare/Life Sciences
+- text: Manufacturing
+  value: Manufacturing
+- text: Mortgage
+  value: Real Estate - Mortgage
+- text: Not For Profit
+  value: Not For Profit
+- text: Real Estate - Commercial
+  value: Real Estate - Commercial
+- text: Real Estate - Residential
+  value: Real Estate - Agent
+- text: Retail
+  value: Retail
+- text: Student
+  value: Individual
+- text: Technology
+  value: Technology
+- text: Other
+  value: Other
